@@ -1,4 +1,4 @@
-# mi_docker_base
+# Docker file
 This repository is a development environment for Materials Informatics published by Assistant Professor <a href="https://researchmap.jp/mkumagai?lang=en">Masaya Kumagai</a> at Kyoto University.
 
 
