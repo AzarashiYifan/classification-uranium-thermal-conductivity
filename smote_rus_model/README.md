@@ -1,4 +1,4 @@
-  # Machine Learning - Imbalanced Dataset Handling with SMOTE and RUS
+  # Machine Learning - SMOTE and RUS
 
 This project applies a combination of Synthetic Minority Over-sampling Technique (SMOTE) and Random Under-sampling (RUS) to tackle the issue of imbalanced data. A RandomForest Classifier is used to classify materials based on their properties. The model is trained using stratified group k-fold cross-validation to ensure a fair distribution of classes in each fold. Performance of the model is evaluated using precision, recall, and F1-score. 
 
