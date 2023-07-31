@@ -1,4 +1,4 @@
-# Uranium Material Classification and Prediction Project
+# Uranium Material Classification and Prediction
 
 ## Overview
 
