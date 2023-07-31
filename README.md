@@ -10,9 +10,13 @@ This project aims to classify and predict potential uranium compounds with high 
 
    Begin by building the environment using the Dockerfile provided in the project. This step ensures that all dependencies are correctly installed.
 
+2. **Obtain MP-API Key**
+   
+   Log in to Materials Project to obtain the API Key at https://next-gen.materialsproject.org/api
+
 ## Data Preparation
 
-2. **Data Filtering (`data/data_prep.ipynb`)**
+3. **Data Filtering (`data/data_prep.ipynb`)**
 
    The `20230112_interpolated_data.csv` file can be downloaded at https://figshare.com/articles/dataset/20230112_starrydata2/21929736
 
@@ -20,7 +24,7 @@ This project aims to classify and predict potential uranium compounds with high 
 
 ## Model Training
 
-3. **Train Models (`imba_model.ipynb`, `smote_model.ipynb`, `smote_rus_model.ipynb`)**
+4. **Train Models (`imba_model.ipynb`, `smote_model.ipynb`, `smote_rus_model.ipynb`)**
 
    The project includes three different models, each trained with a different strategy for handling the class imbalance in the dataset:
 
@@ -34,7 +38,7 @@ This project aims to classify and predict potential uranium compounds with high 
 
 ## Prediction
 
-4. **Filter and Rank the Predictions (`data/prediction_data/mp_uranium_compounds.ipynb`, `data/prediction_data/melting_points.ipynb`)**
+5. **Filter and Rank the Predictions (`data/prediction_data/mp_uranium_compounds.ipynb`, `data/prediction_data/melting_points.ipynb`)**
 
    These two notebooks are used to gather information for making and filtering the predictions.
    - `mp_uranium_compounds.ipynb`: Fetches a list of stable uranium compounds from Materials Project
