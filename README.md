@@ -12,7 +12,9 @@ This project aims to classify and predict potential uranium compounds with high 
 
 ## Data Preparation
 
-2. **Data Filtering (`data_prep.ipynb`)**
+2. **Data Filtering (`data/data_prep.ipynb`)**
+
+   The `20230112_interpolated_data.csv` file can be downloaded at https://figshare.com/articles/dataset/20230112_starrydata2/21929736
 
    Run the `data_prep.ipynb` notebook to filter and prepare the data. This notebook processes the raw data and prepares it for subsequent model training. The output of this notebook is a cleaned and processed dataset ready for the next stage.
 
@@ -28,14 +30,18 @@ This project aims to classify and predict potential uranium compounds with high 
 
    You can run these notebooks to retrain the models. Each notebook saves the trained model as a pickle file for future use.
 
+   The confusion matrix and feature importance are generated and plotted accordingly.
+
 ## Prediction
 
-4. **Predict the Candidates (`prediction.ipynb`)**
+4. **Filter and Rank the Predictions (`data/prediction_data/mp_uranium_compounds.ipynb`, `data/prediction_data/melting_points.ipynb`)**
+
+   These two notebooks are used to gather information for making and filtering the predictions.
+   - `mp_uranium_compounds.ipynb`: Fetches a list of stable uranium compounds from Materials Project
+   - `melting_points.ipynb`: Fetches the melting points of elements from Pymatgen
+  
+6. **Predict the Candidates (`prediction.ipynb`)**
 
    The `prediction.ipynb` notebook uses the trained model (by default, the SMOTE model) to predict potential uranium compounds with high thermal conductivity.
-
-5. **Filter and Rank the Predictions (`mp_uranium_compounds.ipynb`, `melting_points.ipynb`)**
-
-   These two notebooks are used to filter and rank the final predictions. Run the `mp_uranium_compounds.ipynb` and `melting_points.ipynb` notebooks in order to sort the predicted uranium compounds.
 
 By following the steps above, you can prepare the data, train the models, and generate predictions for potential uranium compounds with high thermal conductivity.
