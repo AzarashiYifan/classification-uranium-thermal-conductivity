@@ -43,5 +43,6 @@ This project aims to classify and predict potential uranium compounds with high 
 6. **Predict the Candidates (`prediction.ipynb`)**
 
    The `prediction.ipynb` notebook uses the trained model (by default, the SMOTE model) to predict potential uranium compounds with high thermal conductivity.
+   The candidatse are ranked based on their uranium density
 
 By following the steps above, you can prepare the data, train the models, and generate predictions for potential uranium compounds with high thermal conductivity.
