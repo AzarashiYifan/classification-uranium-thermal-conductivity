@@ -22,7 +22,7 @@ This repository is a development environment for Materials Informatics published
 	$ docker-compose up
 	```
 
-4. Place the Jupyter Notebooks in the same folder
+4. Place the Jupyter Notebooks in the same folder and access the Jupyter Notebook at `http://localhost:8888` on your web browser.
 
 ## Usage of Pipenv
 
