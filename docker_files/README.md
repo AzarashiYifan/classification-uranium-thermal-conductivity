@@ -12,11 +12,7 @@ This repository is a development environment for Materials Informatics published
 ## Installation
 
 1. Copy this repository.
-	```
-	$ cd YOUR_WORKSPACE
-	$ git clone https://github.com/kumagallium/mi_docker_base.git
-	$ cd mi_docker_base
-	```
+
 2. Build the Docker image.
 	```
 	$ docker-compose build
@@ -26,7 +22,7 @@ This repository is a development environment for Materials Informatics published
 	$ docker-compose up
 	```
 
-4. Access the Jupyter Notebook at `http://localhost:8888` on your web browser.
+4. Place the Jupyter Notebooks in the same folder
 
 ## Usage of Pipenv
 
