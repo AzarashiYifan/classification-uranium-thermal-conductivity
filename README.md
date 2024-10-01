@@ -1,4 +1,5 @@
-# Uranium Material Classification and Prediction (archived)
+# Uranium Material Classification and Prediction 
+(This repo is no longer maintained. For the updated model streamlined using the latest Starrydata datpoints, see: )
 
 ## Overview
 
