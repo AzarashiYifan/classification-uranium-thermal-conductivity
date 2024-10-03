@@ -1,29 +1,26 @@
 [[source]]
-name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-
-[dev-packages]
-autopep8 = "*"
-pylint = "*"
-#REFACTOR: It may be better to specify the version.
+name = "pypi"
 
 [packages]
-matplotlib=">=3.4"
-jupyterlab = "*"
-llvmlite="*"
-mp_api = "*"
-matminer = "*"
-pycaret = "*"
-beautifulsoup4 = "*"
-ipywidgets = "*"
-nodejs = "*"
-bokeh = "*"
-black = "*"
-dask = "*"
-seaborn = "*"
-mpcontribs-client = "*"
-mendeleev = "*"
+jupyter = "*"
+python-dateutil = "2.8.2"
+requests = "2.31.0"
+matplotlib = "3.7.5"
+pandas = "1.5.3"
+numpy = "1.24.4"
+joblib = "1.3.2"
+scipy = "1.10.1"
+seaborn = "0.13.2"
+scikit-learn = "1.3.0"
+threadpoolctl = "3.2.0"
+pymatgen = "2023.8.10"
+mp-api = "0.35.1"
+matminer = "0.9.0"
+imbalanced-learn = "0.11.0"
+
+[dev-packages]
 
 [requires]
-python_version = "3.8.13"
+python_version = "3.8.17"
