@@ -1,5 +1,9 @@
 # Uranium Material Classification and Prediction 
-(This repo is no longer maintained. For the updated model streamlined using the latest Starrydata datpoints, see: )
+
+2024/10/3 Note:
+
+- Due to mismanagement of the Docker environment, the results of this study could not be fully replicated with the original environment. Adjustments have been made to the Docker files, and the results can now be almost perfectly replicated (with minor, negligible differences).
+- This repository is no longer maintained. An updated model, streamlined using the latest Starrydata, will be provided in the near future.
 
 ## Overview
 
