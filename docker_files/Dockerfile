@@ -1,32 +1,37 @@
-FROM python:3.8.13
+# Use the official Python image as the base, specifying version 3.8.17
+FROM python:3.8.17-slim
 
-ENV PYTHONUNBUFFERED 1
+# Install necessary dependencies
+RUN apt-get update && apt-get install -y \
+    wget \
+    curl \
+    build-essential \
+    && apt-get clean
 
-ENV WORKDIR /code/
-WORKDIR ${WORKDIR}
-COPY Pipfile* ${WORKDIR}
 
+# Set the working directory
+WORKDIR /app
 
-RUN apt update
-RUN echo "deb http://httpredir.debian.org/debian buster main contrib non-free" > /etc/apt/sources.list \
-    && echo "deb http://httpredir.debian.org/debian buster-updates main contrib non-free" >> /etc/apt/sources.list \
-    && echo "deb http://security.debian.org/ buster/updates main contrib non-free" >> /etc/apt/sources.list \
-    && echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections \
-    && apt-get update \
-    && apt-get install -y \
-        fonts-arphic-ukai \
-        fonts-arphic-uming \
-        fonts-ipafont-mincho \
-        fonts-ipafont-gothic \
-        fonts-unfonts-core \
-        ttf-wqy-zenhei \
-        ttf-mscorefonts-installer \
-    && apt-get clean \
-    && apt-get autoremove -y \
-    && rm -rf /var/lib/apt/lists/*
+# Copy the Pipfile and Pipfile.lock (if you have a Pipfile.lock already)
+COPY Pipfile /app/
 
-COPY . /code/
+# Install pipenv
+RUN pip install pipenv
 
-RUN pip install --upgrade pip && \
-    pip install pipenv && \
-	pipenv install --system --skip-lock
+# Generate Pipfile.lock
+RUN pipenv lock
+
+# Install dependencies using pipenv with verbose output
+RUN pipenv install --system --deploy --verbose
+
+# Copy the rest of the project files
+COPY . /app
+
+# Install JupyterLab
+RUN pip install jupyterlab
+
+# Configure JupyterLab to disable token authentication
+RUN mkdir -p /root/.jupyter && echo "c.NotebookApp.token = ''" >> /root/.jupyter/jupyter_notebook_config.py
+
+# Default command to run Jupyter Lab
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--no-browser"]
